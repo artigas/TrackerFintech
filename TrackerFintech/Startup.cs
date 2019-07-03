@@ -27,7 +27,9 @@ namespace TrackerFintech
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            //if (env.IsDevelopment())
+            //if (configuration.GetValue<bool>("EnableDevExceptions")) // Se parsea el valor seteado en TrackerFintech -> Properties -> Debug
+            if (configuration.GetValue<bool>("FeatureToggles:EnableDevExceptions")) // Valor seteado en appsettings o appsettings.Development
             {
                 app.UseDeveloperExceptionPage();
             }
