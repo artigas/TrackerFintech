@@ -44,6 +44,14 @@ namespace TrackerFintech
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    "Default",
+                    "{controller=Home}/{action=Index}/{id?}"
+                );
+            });
+
             app.UseFileServer();
         }
     }
