@@ -24,6 +24,10 @@ namespace TrackerFintech
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
 
             app.UseFileServer();
         }
