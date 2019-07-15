@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TrackerFintech.DataContexts;
 
 namespace TrackerFintech
 {
@@ -25,6 +27,12 @@ namespace TrackerFintech
             services.AddTransient<FeatureToggles>(x => new FeatureToggles()
             {
                 DeveloperExceptions = configuration.GetValue<bool>("FeatureToggles:DeveloperExceptions")
+            });
+
+            services.AddDbContext<TrackerDataContext>(options =>
+            {
+                var connectiontString = configuration.GetConnectionString("TrackerDataContext");
+                options.UseSqlServer(connectiontString);
             });
 
             services.AddMvc();

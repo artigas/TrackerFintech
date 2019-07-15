@@ -1,0 +1,65 @@
+﻿@model TrackerFintech.Models.Tracker
+
+@{
+    ViewBag.Title = "TrackerFintech";
+}
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @*@Html.ValidationSummary()*@
+        <!-- Title input -->
+        <div class="form-title-input">
+            @*<div class="form-title-input-label">
+                @Html.LabelFor(x => x.Title)
+            </div>*@
+            <div class="form-title-input-editor">
+                @Html.EditorFor(x => x.Title, new { htmlAttributes = new { placeholder = "Título" } })
+            </div>
+            @*@Html.ValidationMessageFor(x => x.Title)*@
+        </div>
+        <!-- Category input -->
+        <div class="form-category-input">
+            @*<div class="form-category-input-label">
+                @Html.LabelFor(x => x.Category)
+            </div>*@
+            <div class="form-category-input-editor">
+                @Html.EditorFor(x => x.Category, new { htmlAttributes = new { placeholder = "Categoría" } })
+            </div>
+            @*@Html.ValidationMessageFor(x => x.Category)*@
+        </div>
+        <!-- Value input -->
+        <div class="form-value-input">
+            @*<div class="form-value-input-value">
+                @Html.LabelFor(x => x.Value)
+            </div>*@
+            <div class="form-value-input-editor">
+                @Html.EditorFor(x => x.Value, new { htmlAttributes = new { placeholder = "Valor" } })
+            </div>
+            @*@Html.ValidationMessageFor(x => x.Value)*@
+        </div>
+        <!-- Save input -->
+        <div class="form-submit-button">
+            <button class="btn" type="submit"><i class="far fa-save"></i></button>
+        </div>
+    }
+
+    @foreach (TrackerFintech.Models.Tracker tracker in (List<TrackerFintech.Models.Tracker>)ViewBag.TrackerList)
+    {
+        <div class="row-tracker">
+            <div class="row-tracker-left">
+                <h1 class="row-tracker-title">@tracker.Title</h1>
+                <h2 class="row-tracker-category">@tracker.Category</h2>
+            </div>
+            <div class="row-tracker-right">
+                <div class="row-tracker-value">
+                    <h2 class="row-tracker-value">$@tracker.Value</h2>
+                </div>
+                @*<div class="row-tracker-buttons">
+                        <button type="button">Borrar</button>
+                        <button type="button">Editar</button>
+                    </div>*@
+            </div>
+        </div>
+    }
+</div>

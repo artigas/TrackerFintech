@@ -1,0 +1,162 @@
+﻿/* mobile first */
+body {
+    background-color: #C4E0E5;
+    align-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+h1 {
+    font-size: 2em;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 0px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+input {
+    width: 80%;
+    background-color: #4CA1AF;
+    color: whitesmoke;
+    border: none;
+    border-bottom: 2px solid #C4E0E5;
+}
+::placeholder {
+    color: #C4E0E5;
+}
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CA1AF;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container {
+    position: absolute;
+    margin: 5vh 10vw;
+    padding: 10px;
+    /*top: 5vh;
+    left: 10vw;
+    right: 10vw;
+    bottom: 5vh;*/
+}
+
+.row-tracker {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 5px 0px;
+    padding: 7px 7px 10px 7px;
+    background-color: #4CA1AF;
+    color: whitesmoke;
+}
+
+.row-tracker-left {
+    margin: 0px;
+}
+
+.row-tracker-right {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0px;
+}
+
+.row-tracker-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    padding: 5px;
+}
+
+.row-tracker-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    margin: 0px;
+}
+
+.btn {
+    background-color: #4CA1AF;
+    border: none; /* Remove borders */
+    color: whitesmoke; /* White text */
+    padding: 6px 8px; /* Some padding */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 5px;
+}
+
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: whitesmoke;
+        color: #4CA1AF;
+    }
+
+.error, .field-validation-error, .validation-summary-errors {
+    color: #cb202a;
+    font-weight: bold;
+}
+
+.field-validation-error {
+    display: block;
+    margin-left: 90px;
+}
+
+.input-validation-error {
+    box-shadow: #cb202a 1px;
+}
+
+.validation-summary-errors {
+    margin: 1em;
+}
+
+/* tabletas */
+@media (min-width: 768px) {
+
+}
+
+/* escritorio normales */
+@media (min-width: 992px) {
+    input {
+        width: 100%;
+    }
+    form {
+        padding: 10px 100px;
+    }
+} 
+
+/* pantallas grandes */
+@media (min-width: 1200px) {
+    .container {
+        position: fixed;
+        top: 30px;
+        left: 300px;
+        right: 300px;
+        bottom: 30px;
+    }
+    
+    input {
+        width: 150%;
+    }
+} 
+
+
+
+
+
